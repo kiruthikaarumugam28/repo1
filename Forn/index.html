@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form and Table Example</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Title</h1>
+    
+    <form id="submissionForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" required>
+        
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" required>
+        
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" required>
+        
+        <label for="pinCode">Pin Code:</label>
+        <input type="text" id="pinCode" required>
+        
+        <label>Gender:</label>
+        <label><input type="radio" name="gender" value="Male" required> Male</label>
+        <label><input type="radio" name="gender" value="Female" required> Female</label>
+        <label><input type="radio" name="gender" value="Other" required> Other</label>
+        
+        <label>Choice of Food:</label>
+        <label><input type="checkbox" name="food" value="Pizza"> Pizza</label>
+        <label><input type="checkbox" name="food" value="Burger"> Burger</label>
+        <label><input type="checkbox" name="food" value="Pasta"> Pasta</label>
+        <label><input type="checkbox" name="food" value="Salad"> Salad</label>
+        <label><input type="checkbox" name="food" value="Sushi"> Sushi</label>
+        
+        <label for="state">State:</label>
+        <input type="text" id="state" required>
+        
+        <label for="country">Country:</label>
+        <input type="text" id="country" required>
+        
+        <button type="submit">Submit</button>
+    </form>
+    
+    <h2>Submitted Data</h2>
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Pin Code</th>
+                <th>Gender</th>
+                <th>Food</th>
+                <th>State</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script src="index.js"></script>
+    <script src="https://app.zenclass.in/sheets/v1/js/zen/suite/bundle.js"></script>
+</body>
+</html>
