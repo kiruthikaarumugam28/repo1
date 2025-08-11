@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Expense Calculator</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💰</text></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="finance-app">
+    <!-- Header -->
+    <div class="app-header">
+      <div class="header-content">
+        <div>
+          <h1><i class="fas fa-wallet"></i> Finance Tracker Pro</h1>
+          <p>Track every dollar with ease</p>
+        </div>
+        <div class="header-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-section">
+      <form id="entry-form">
+        <div class="form-group">
+          <label for="description"><i class="fas fa-align-left"></i> Description</label>
+          <div class="input-wrapper">
+            <input type="text" id="description" placeholder="Salary, Rent, etc." required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="amount"><i class="fas fa-dollar-sign"></i> Amount</label>
+          <div class="input-wrapper">
+            <input type="text" id="amount" placeholder="0.00" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="type"><i class="fas fa-exchange-alt"></i> Type</label>
+          <div class="select-wrapper">
+            <select id="type" required>
+              <option value="">Select Type</option>
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+        
+        <div class="form-buttons">
+          <button type="submit" class="btn-primary">
+            <i class="fas fa-plus-circle"></i> Add Transaction
+          </button>
+          <button type="button" id="reset-btn" class="btn-secondary">
+            <i class="fas fa-redo"></i> Reset
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Transactions Section -->
+    <div class="transactions-section">
+      <div class="section-header">
+        <h2><i class="fas fa-list-ul"></i> Transactions</h2>
+        <div class="filter-options">
+          <label>
+            <input type="radio" name="filter" value="all" checked>
+            <span>All</span>
+          </label>
+          <label>
+            <input type="radio" name="filter" value="income">
+            <span>Income</span>
+          </label>
+          <label>
+            <input type="radio" name="filter" value="expense">
+            <span>Expense</span>
+          </label>
+        </div>
+      </div>
+      
+      <ul id="entries-list">
+        <li class="empty-state">
+          <i class="fas fa-receipt"></i>
+          <p>No transactions yet</p>
+          <small>Add your first transaction above</small>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Summary Section -->
+    <div class="summary-section">
+      <h2><i class="fas fa-chart-pie"></i> Financial Summary</h2>
+      
+      <div class="summary-cards">
+        <div class="summary-card income-card">
+          <div class="card-icon">
+            <i class="fas fa-arrow-down"></i>
+          </div>
+          <p class="card-label">Income</p>
+          <p id="total-income" class="card-value">$0</p>
+        </div>
+        
+        <div class="summary-card expense-card">
+          <div class="card-icon">
+            <i class="fas fa-arrow-up"></i>
+          </div>
+          <p class="card-label">Expense</p>
+          <p id="total-expense" class="card-value">$0</p>
+        </div>
+        
+        <div class="summary-card balance-card">
+          <div class="card-icon">
+            <i class="fas fa-balance-scale"></i>
+          </div>
+          <p class="card-label">Balance</p>
+          <p id="net-balance" class="card-value">$0</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
