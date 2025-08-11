@@ -1,0 +1,538 @@
+/* Dark Mode Base Styles */
+:root {
+  --primary: #4361ee;
+  --primary-light: #4895ef;
+  --primary-dark: #3a0ca3;
+  --success: #4cc9f0;
+  --success-dark: #2a9d8f;
+  --danger: #f72585;
+  --danger-dark: #b5179e;
+  --light: #1e293b;
+  --dark: #f8fafc;
+  --gray: #94a3b8;
+  --gray-light: #334155;
+  --background: #0f172a;
+  --card-bg: #1e293b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background);
+  color: var(--dark);
+  line-height: 1.6;
+  padding: 16px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* App Container */
+.finance-app {
+  width: 100%;
+  max-width: 800px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin: 16px 0;
+}
+
+/* Header Styles */
+.app-header {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.header-content h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.header-content p {
+  opacity: 0.9;
+  font-size: 0.85rem;
+}
+
+.header-icon {
+  background: rgba(255, 255, 255, 0.2);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  backdrop-filter: blur(5px);
+}
+
+/* Form Styles */
+.form-section {
+  padding: 20px;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--dark);
+  font-size: 0.85rem;
+}
+
+.form-group label i {
+  margin-right: 6px;
+  color: var(--primary);
+}
+
+.input-wrapper, .select-wrapper {
+  position: relative;
+}
+
+.input-wrapper i, .select-wrapper i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+.select-wrapper i:last-child {
+  left: auto;
+  right: 14px;
+  pointer-events: none;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px 16px 12px 16px;
+  border: 1px solid var(--gray-light);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background-color: var(--card-bg);
+  color: var(--dark);
+}
+
+input::placeholder {
+  color: var(--gray);
+  opacity: 0.7;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+select {
+  appearance: none;
+  padding-right: 40px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+
+.btn-primary, .btn-secondary {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 300;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-secondary {
+  background: var(--gray-light);
+  color: var(--dark);
+}
+
+.btn-secondary:hover {
+  background: #475569;
+}
+
+/* Transactions Section */
+.transactions-section {
+  padding: 20px;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.section-header h2 {
+  font-size: 1.2rem;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-header h2 i {
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.filter-options {
+  display: flex;
+  gap: 8px;
+  background: var(--gray-light);
+  padding: 4px;
+  border-radius: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-options label {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--dark);
+  font-size: 0.85rem;
+}
+
+.filter-options label:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.filter-options input {
+  width: auto;
+  margin-right: 6px;
+  accent-color: var(--primary);
+}
+
+#entries-list {
+  max-height: 300px;
+  overflow-y: auto;
+  list-style: none;
+}
+
+#entries-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+#entries-list::-webkit-scrollbar-track {
+  background: var(--gray-light);
+  border-radius: 10px;
+}
+
+#entries-list::-webkit-scrollbar-thumb {
+  background: var(--gray);
+  border-radius: 10px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 30px 16px;
+  color: var(--gray);
+}
+
+.empty-state i {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+.empty-state p {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.empty-state small {
+  font-size: 0.85rem;
+}
+
+/* Transaction Items */
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  margin-bottom: 10px;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.transaction-item.income {
+  border-left-color: var(--success);
+}
+
+.transaction-item.expense {
+  border-left-color: var(--danger);
+}
+
+.transaction-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.transaction-description {
+  font-weight: 600;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.95rem;
+}
+
+.transaction-type {
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.transaction-type.income {
+  background: rgba(76, 201, 240, 0.1);
+  color: var(--success);
+}
+
+.transaction-type.expense {
+  background: rgba(247, 37, 133, 0.1);
+  color: var(--danger);
+}
+
+.transaction-amount {
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0 12px;
+  white-space: nowrap;
+}
+
+.transaction-amount.income {
+  color: var(--success);
+}
+
+.transaction-amount.expense {
+  color: var(--danger);
+}
+
+.transaction-actions {
+  display: flex;
+}
+
+.edit-btn, .delete-btn {
+  border: none;
+  padding: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.edit-btn {
+  color: #eab308;
+  margin-right: 6px;
+}
+
+.edit-btn:hover {
+  background-color: rgba(234, 179, 8, 0.1);
+}
+
+.delete-btn {
+  color: #ef4444;
+}
+
+.delete-btn:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Summary Section */
+.summary-section {
+  padding: 20px;
+}
+
+.summary-section h2 {
+  font-size: 1.2rem;
+  color: var(--dark);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.summary-section h2 i {
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.summary-card {
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--card-bg);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--gray-light);
+}
+
+.card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+.income-card .card-icon {
+  background: rgba(76, 201, 240, 0.1);
+  color: var(--success);
+}
+
+.expense-card .card-icon {
+  background: rgba(247, 37, 133, 0.1);
+  color: var(--danger);
+}
+
+.balance-card .card-icon {
+  background: rgba(67, 97, 238, 0.1);
+  color: var(--primary-light);
+}
+
+.card-label {
+  font-size: 0.85rem;
+  color: var(--gray);
+  margin-bottom: 4px;
+}
+
+.card-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.income-card .card-value {
+  color: var(--success);
+}
+
+.expense-card .card-value {
+  color: var(--danger);
+}
+
+.balance-card .card-value {
+  color: var(--primary-light);
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+  body {
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .header-content {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+  
+  .header-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .header-content p {
+    font-size: 0.9rem;
+  }
+  
+  .header-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+  
+  .form-buttons {
+    flex-direction: row;
+  }
+  
+  .transaction-item {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .transaction-amount {
+    margin: 0 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .finance-app {
+    margin: 20px 0;
+  }
+  
+  .app-header {
+    padding: 25px;
+  }
+  
+  .form-section, 
+  .transactions-section, 
+  .summary-section {
+    padding: 25px;
+  }
+  
+  .summary-cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+}
